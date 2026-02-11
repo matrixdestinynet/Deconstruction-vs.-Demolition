@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deconstruction vs. Demolition: Portland's Requirements for Renovation Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0d9488;
+            --primary-light: #ccfbf1;
+            --decon-color: #10b981;
+            --demo-color: #ef4444;
+            --timber-color: #d97706;
+            --light: #ffffff;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --gray-light: #f8fafc;
+            --border-radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: var(--dark);
+            line-height: 1.7;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0f766e 0%, var(--primary) 100%);
+            color: white;
+            padding: 60px 40px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            opacity: 0.1;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            padding: 40px;
+        }
+
+        .comparison-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .method-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid;
+            transition: transform 0.3s ease;
+        }
+
+        .method-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .decon-card { border-top-color: var(--decon-color); }
+        .demo-card { border-top-color: var(--demo-color); }
+
+        .method-icon {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .decon-card .method-icon { color: var(--decon-color); }
+        .demo-card .method-icon { color: var(--demo-color); }
+
+        /* Requirement Box */
+        .requirements-box {
+            background: #fffbeb;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 4px solid var(--timber-color);
+        }
+
+        /* Process Timeline */
+        .process-section {
+            background: #f0fdfa;
+            padding: 40px;
+            border-top: 1px solid #99f6e4;
+        }
+
+        .process-timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+
+        /* Material Salvage */
+        .materials-section {
+            padding: 40px;
+        }
+
+        .material-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .material-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--timber-color);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 40px;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            text-align: center;
+        }
+
+        .resource-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .resource-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 14px 28px;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-light);
+        }
+
+        .resource-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+            color: #0f766e;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #0f766e;
+            color: white;
+        }
+
+        /* Minimal Animation */
+        @keyframes gentlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .pulse-element {
+            animation: gentlePulse 4s infinite ease-in-out;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--gray);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--gray-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .comparison-section, .process-section, .materials-section, .cta-section {
+                padding: 25px;
+            }
+            
+            .comparison-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-timeline {
+                flex-direction: column;
+            }
+            
+            .material-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .resource-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .resource-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-icon">
+                <i class="fas fa-home"></i>
+            </div>
+            <h1>Deconstruction vs. Demolition</h1>
+            <p class="tagline">Understanding Portland's Requirements for Renovation Projects</p>
+            <div style="background: rgba(255, 255, 255, 0.15); color: white; padding: 10px 20px; border-radius: 50px; display: inline-block; margin-top: 10px; font-size: 0.9rem;">
+                <i class="fas fa-map-marker-alt"></i> Specific Local Regulatory Concern
+            </div>
+        </header>
+
+        <main class="comparison-section">
+            <h2 style="color: var(--dark); margin-bottom: 20px; text-align: center;">Portland's Mandatory Deconstruction Ordinance</h2>
+            
+            <p>Portland's policy requires careful disassembly of qualifying structures to recover valuable materials rather than mechanical demolition. This innovative approach aims to reduce landfill waste, preserve historic building components, and support local green economy jobs.</p>
+            
+            <div class="comparison-cards">
+                <div class="method-card decon-card">
+                    <div class="method-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 style="color: var(--dark); margin-bottom: 15px;">Deconstruction</h3>
+                    <p><strong>Careful disassembly</strong> by hand to salvage reusable materials. Typically 2-3 times longer than demolition but recovers 75-90% of materials.</p>
+                    <ul style="margin-top: 15px; padding-left: 20px; color: var(--gray);">
+                        <li>Hand-disassembly process</li>
+                        <li>Material salvage focus</li>
+                        <li>Labor intensive</li>
+                        <li>Higher upfront cost</li>
+                    </ul>
+                </div>
+                
+                <div class="method-card demo-card">
+                    <div class="method-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3 style="color: var(--dark); margin-bottom: 15px;">Demolition</h3>
+                    <p><strong>Mechanical destruction</strong> using heavy equipment. Faster and cheaper but sends most materials to landfill (only 10-15% recovery).</p>
+                    <ul style="margin-top: 15px; padding-left: 20px; color: var(--gray);">
+                        <li>Machine-based destruction</li>
+                        <li>Speed/efficiency focus</li>
+                        <li>Equipment intensive</li>
+                        <li>Lower upfront cost</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="requirements-box pulse-element">
+                <h4 style="color: var(--dark); margin-bottom: 15px;"><i class="fas fa-gavel" style="color: var(--timber-color); margin-right: 10px;"></i>When Deconstruction Is Required</h4>
+                <p><strong>The ordinance applies when:</strong><br>
+                1. Structure was built in <strong>1940 or earlier</strong><br>
+                2. Located within <strong>Portland city limits</strong><br>
+                3. Designated for <strong>full demolition</strong> (not partial)<br>
+                4. Over <strong>800 square feet</strong> in size</p>
+                <p style="margin-top: 15px; font-size: 0.9rem;"><em>Exemptions: Emergency demolitions, structures deemed unsafe, and buildings with severe damage (>75%).</em></p>
+            </div>
+        </main>
+
+        <section class="process-section">
+            <h2 style="color: var(--dark); margin-bottom: 20px; text-align: center;">The Deconstruction Process for Homeowners</h2>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4 style="color: var(--dark); margin-bottom: 8px;">Permit Application</h4>
+                    <p style="color: var(--gray); font-size: 0.9rem;">Submit deconstruction plan to Bureau of Development Services</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4 style="color: var(--dark); margin-bottom: 8px;">Material Assessment</h4>
+                    <p style="color: var(--gray); font-size: 0.9rem;">Certified professional evaluates salvageable materials</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4 style="color: var(--dark); margin-bottom: 8px;">Hand Disassembly</h4>
+                    <p style="color: var(--gray); font-size: 0.9rem;">Trained crew carefully removes reusable components</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4 style="color: var(--dark); margin-bottom: 8px;">Salvage & Donation</h4>
+                    <p style="color: var(--gray); font-size: 0.9rem;">Materials sorted for reuse, recycling, or proper disposal</p>
+                </div>
+            </div>
+            
+            <p style="text-align: center; color: var(--gray); margin-top: 20px;">
+                <strong>Timeline:</strong> Typically 2-4 weeks for a standard single-family home (versus 1-3 days for demolition)
+            </p>
+        </section>
+
+        <section class="materials-section">
+            <h2 style="color: var(--dark); margin-bottom: 20px; text-align: center;">What Gets Salvaged & Why It Matters</h2>
+            
+            <div class="material-grid">
+                <div class="material-item">
+                    <div style="font-size: 2rem; color: var(--timber-color); margin-bottom: 10px;">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h4 style="color: var(--dark); margin-bottom: 8px;">Old-Growth Timber</h4>
+                    <p style="color: var(--gray); font-size: 0.9rem;">Dense, stable wood superior to modern lumber; valuable for reuse</p>
+                </div>
+                
+                <div class="material-item">
+                    <div style="font-size: 2rem; color: var(--timber-color); margin-bottom: 10px;">
+                        <i class="fas fa-door-closed"></i>
+                    </div>
+                    <h4 style="color: var(--dark); margin-bottom: 8px;">Historic Fixtures</h4>
+                    <p style="color: var(--gray); font-size: 0.9rem;">Doors, windows, hardware with period authenticity</p>
+                </div>
+                
+                <div class="material-item">
+                    <div style="font-size: 2rem; color: var(--timber-color); margin-bottom: 10px;">
+                        <i class="fas fa-brick"></i>
+                    </div>
+                    <h4 style="color: var(--dark); margin-bottom: 8px;">Brick & Masonry</h4>
+                    <p style="color: var(--gray); font-size: 0.9rem;">Reusable for patios, walkways, or new construction</p>
+                </div>
+                
+                <div class="material-item">
+                    <div style="font-size: 2rem; color: var(--timber-color); margin-bottom: 10px;">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h4 style="color: var(--dark); margin-bottom: 8px;">Plumbing & Metal</h4>
+                    <p style="color: var(--gray); font-size: 0.9rem;">Copper pipes, cast iron, fixtures for scrap recycling</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 25px; padding: 20px; background: #fffbeb; border-radius: 12px; border-left: 4px solid var(--timber-color);">
+                <h4 style="color: var(--dark); margin-bottom: 10px;"><i class="fas fa-chart-line" style="color: var(--timber-color); margin-right: 10px;"></i>Environmental & Economic Benefits</h4>
+                <p><strong>Waste reduction:</strong> Diverts 8,000-12,000 lbs per home from landfills. <strong>Carbon savings:</strong> Reusing materials avoids emissions from manufacturing new equivalents. <strong>Job creation:</strong> Creates 3-5x more local jobs than demolition. <strong>Material value:</strong> Salvaged materials can offset 15-25% of deconstruction costs when sold or donated.</p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h3 style="color: var(--dark); margin-bottom: 15px;">Navigating Your Portland Renovation</h3>
+            <p style="color: var(--gray); margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Whether you're planning a deconstruction project or need help with post-renovation cleanout, professional services can ensure compliance and efficiency.
+            </p>
+            
+            <div class="resource-links">
+                <a href="https://www.parkrosejunk.com/" class="resource-btn btn-primary">
+                    <i class="fas fa-truck-loading"></i> Property Clean Outs
+                </a>
+                <a href="https://maps.app.goo.gl/rW2d1hVSEMkzAG1m8" class="resource-btn">
+                    <i class="fas fa-map-marked-alt"></i> Get Now
+                </a>
+                <a href="https://matrixdestinynet.github.io/Portland-s-Disposal-Directory/" class="resource-btn">
+                    <i class="fab fa-github"></i> Github
+                </a>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 20px; background: white; border-radius: 12px; font-size: 0.9rem; color: var(--gray);">
+                <i class="fas fa-file-contract" style="color: var(--primary); margin-right: 8px;"></i>
+                <strong>Compliance note:</strong> Homeowners must submit a Deconstruction Salvage Report within 30 days of project completion, documenting materials salvaged and their destinations (reuse, recycling, or disposal).
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2024 Portland Renovation Guide | Deconstruction Ordinance Reference | Updated December 2024</p>
+            <p style="margin-top: 10px;">Verify current requirements with Portland Bureau of Development Services before starting any project.</p>
+        </footer>
+    </div>
+</body>
+</html>
